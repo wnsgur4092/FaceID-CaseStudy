@@ -14,6 +14,10 @@
 		BF00700A28FD7BB40081A4A6 /* FaceID_CaseStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00700928FD7BB40081A4A6 /* FaceID_CaseStudyTests.swift */; };
 		BF00701428FD7BB40081A4A6 /* FaceID_CaseStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00701328FD7BB40081A4A6 /* FaceID_CaseStudyUITests.swift */; };
 		BF00701628FD7BB40081A4A6 /* FaceID_CaseStudyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00701528FD7BB40081A4A6 /* FaceID_CaseStudyUITestsLaunchTests.swift */; };
+		BF00702428FD7D390081A4A6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BF00702328FD7D390081A4A6 /* FirebaseAuth */; };
+		BF00702628FD7F0C0081A4A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF00702528FD7F0C0081A4A6 /* GoogleService-Info.plist */; };
+		BF00702A28FD7F730081A4A6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00702928FD7F730081A4A6 /* LoginView.swift */; };
+		BF00702C28FD81350081A4A6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00702B28FD81350081A4A6 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,9 @@
 		BF00700F28FD7BB40081A4A6 /* FaceID CaseStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FaceID CaseStudyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF00701328FD7BB40081A4A6 /* FaceID_CaseStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceID_CaseStudyUITests.swift; sourceTree = "<group>"; };
 		BF00701528FD7BB40081A4A6 /* FaceID_CaseStudyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceID_CaseStudyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BF00702528FD7F0C0081A4A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BF00702928FD7F730081A4A6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BF00702B28FD81350081A4A6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF00702428FD7D390081A4A6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +102,9 @@
 		BF006FF728FD7BB30081A4A6 /* FaceID CaseStudy */ = {
 			isa = PBXGroup;
 			children = (
+				BF00702828FD7F630081A4A6 /* ViewModel */,
+				BF00702728FD7F560081A4A6 /* View */,
+				BF00702528FD7F0C0081A4A6 /* GoogleService-Info.plist */,
 				BF006FF828FD7BB30081A4A6 /* FaceID_CaseStudyApp.swift */,
 				BF006FFA28FD7BB30081A4A6 /* ContentView.swift */,
 				BF006FFC28FD7BB40081A4A6 /* Assets.xcassets */,
@@ -127,6 +138,22 @@
 			path = "FaceID CaseStudyUITests";
 			sourceTree = "<group>";
 		};
+		BF00702728FD7F560081A4A6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BF00702928FD7F730081A4A6 /* LoginView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BF00702828FD7F630081A4A6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BF00702B28FD81350081A4A6 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +170,9 @@
 			dependencies = (
 			);
 			name = "FaceID CaseStudy";
+			packageProductDependencies = (
+				BF00702328FD7D390081A4A6 /* FirebaseAuth */,
+			);
 			productName = "FaceID CaseStudy";
 			productReference = BF006FF528FD7BB30081A4A6 /* FaceID CaseStudy.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +245,9 @@
 				Base,
 			);
 			mainGroup = BF006FEC28FD7BB30081A4A6;
+			packageReferences = (
+				BF00702228FD7D390081A4A6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = BF006FF628FD7BB30081A4A6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +266,7 @@
 			files = (
 				BF00700028FD7BB40081A4A6 /* Preview Assets.xcassets in Resources */,
 				BF006FFD28FD7BB40081A4A6 /* Assets.xcassets in Resources */,
+				BF00702628FD7F0C0081A4A6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +291,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF00702C28FD81350081A4A6 /* LoginViewModel.swift in Sources */,
+				BF00702A28FD7F730081A4A6 /* LoginView.swift in Sources */,
 				BF006FFB28FD7BB30081A4A6 /* ContentView.swift in Sources */,
 				BF006FF928FD7BB30081A4A6 /* FaceID_CaseStudyApp.swift in Sources */,
 			);
@@ -583,6 +619,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BF00702228FD7D390081A4A6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BF00702328FD7D390081A4A6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BF00702228FD7D390081A4A6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BF006FED28FD7BB30081A4A6 /* Project object */;
 }
