@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 class LoginViewModel : ObservableObject {
     
@@ -14,7 +15,28 @@ class LoginViewModel : ObservableObject {
     
     //MARK: - FACE ID PROPERTIS
     @AppStorage("use_face_id") var useFaceID : Bool = false
-    @AppStorage("use_face_email") var useFacemail : String = ""
-    @AppStorage("use_face_password") var useFacePassword : String = ""
+    @AppStorage("use_face_email") var faceIDEmail : String = ""
+    @AppStorage("use_face_password") var faceIDPassword : String = ""
+    
+    //LogStatus
+    @AppStorage("log_status") var logStatus : Bool = false
+    
+    //MARK: - ERROR
+    @Published var showError : Bool = false
+    @Published var errorMsg : String = ""
+    
+    //MARK: - Firebase Login
+    func loginUser(useFaceID : Bool) async throws{
+        
+        let _ = try await Auth.auth().signIn(withEmail: email, password: password)
+        
+        if useFaceID{
+            self.useFaceID = useFaceID
+            faceIDEmail = email
+            faceIDPassword = password
+        }
+        
+        logStatus = true
+    }
 }
 

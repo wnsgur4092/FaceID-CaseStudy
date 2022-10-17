@@ -11,7 +11,7 @@ struct LoginView: View {
     //MARK: - PROPERTIES
     @StateObject var loginViewModel : LoginViewModel = LoginViewModel()
     
-    @AppStorage("use_face_id") var useFaceID : Bool = false
+    @State var useFaceID : Bool = false
     
     //MARK: - BODY
     var body: some View {
@@ -43,7 +43,7 @@ struct LoginView: View {
                 .padding(.top, 20)
             
             //MARK: - PASSWORD
-            TextField("Password", text: $loginViewModel.password)
+            SecureField("Password", text: $loginViewModel.password)
                 .padding()
                 .background{
                     RoundedRectangle(cornerRadius: 8)
@@ -56,9 +56,10 @@ struct LoginView: View {
             
             //MARK: - FACE ID
             Group {
-                if useFaceID{
+                if loginViewModel.useFaceID{
                     Button {
                         //FACE ID ACTION
+
                     } label: {
                         VStack(alignment: .leading, spacing: 10) {
                             Label {
@@ -89,7 +90,14 @@ struct LoginView: View {
             
             //MARK: - LOGIN BUTTON
             Button {
-                
+                Task {
+                    do {
+                        try await loginViewModel.loginUser(useFaceID: useFaceID )
+                    } catch {
+                        loginViewModel.errorMsg = error.localizedDescription
+                        loginViewModel.showError.toggle()
+                    }
+                }
             } label: {
                 Text("LOGIN")
                     .fontWeight(.semibold)
@@ -116,6 +124,9 @@ struct LoginView: View {
         }
         .padding(.horizontal, 25)
         .padding(.vertical)
+        .alert(loginViewModel.errorMsg , isPresented: $loginViewModel.showError) {
+            
+        }
     }
 }
 

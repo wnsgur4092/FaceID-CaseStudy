@@ -18,6 +18,7 @@
 		BF00702628FD7F0C0081A4A6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF00702528FD7F0C0081A4A6 /* GoogleService-Info.plist */; };
 		BF00702A28FD7F730081A4A6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00702928FD7F730081A4A6 /* LoginView.swift */; };
 		BF00702C28FD81350081A4A6 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00702B28FD81350081A4A6 /* LoginViewModel.swift */; };
+		BF00702E28FD88AE0081A4A6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF00702D28FD88AE0081A4A6 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		BF00702528FD7F0C0081A4A6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF00702928FD7F730081A4A6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BF00702B28FD81350081A4A6 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BF00702D28FD88AE0081A4A6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				BF00702928FD7F730081A4A6 /* LoginView.swift */,
+				BF00702D28FD88AE0081A4A6 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				BF00702C28FD81350081A4A6 /* LoginViewModel.swift in Sources */,
 				BF00702A28FD7F730081A4A6 /* LoginView.swift in Sources */,
 				BF006FFB28FD7BB30081A4A6 /* ContentView.swift in Sources */,
+				BF00702E28FD88AE0081A4A6 /* HomeView.swift in Sources */,
 				BF006FF928FD7BB30081A4A6 /* FaceID_CaseStudyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
